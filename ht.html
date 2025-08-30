@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Ganesh Mithra Mandal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+    }
+    header {
+      background: #c62828;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #ef5350;
+      padding: 8px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .content {
+      padding: 15px;
+      text-align: center;
+    }
+    .btn {
+      background: #ff7043;
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      background: #c62828;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-family: "ChelthmITC Bk BT", sans-serif;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    footer span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    /* Blinking Notes */
+    .blink {
+      animation: blink 1.5s infinite;
+      color: red;
+      font-weight: bold;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    /* Typing effect */
+    .typing {
+      border-right: 2px solid black;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 5s steps(40, end) forwards;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    /* TEAM SGMM faded background (Page 2) */
+    .faded-bg {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      bottom: 40px;
+      font-size: 40px;
+      font-family: "Charlesworth", serif;
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+      pointer-events: none;
+      text-align: center;
+    }
+    /* Dropdowns */
+    .dropdown {
+      margin: 10px 0;
+      text-align: left;
+    }
+    .dropdown button {
+      width: 100%;
+      padding: 10px;
+      background: #ff7043;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: left;
+    }
+    .dropdown-content {
+      display: none;
+      padding: 8px;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+    .dropdown-content p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+    .dropdown.show .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1: Landing -->
+<div id="page1" class="content">
+  <header>Shree Ganesh Mithra Mandal</header>
+  <img src="https://via.placeholder.com/150" alt="Ganesh Logo"><br><br>
+  <h2>Unlock New Opportunities After 12th</h2>
+  <button class="btn" onclick="showPage('page2')">Starts Here</button>
+  <p class="typing">use desktop site for better experience</p>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 2: Main Interface -->
+<div id="page2" class="content" style="display:none; position:relative;">
+  <header>Shree Ganesh Mithra Mandal</header>
+  <nav>
+    <a href="#" onclick="showPage('page3')">Engineering</a>
+    <a href="#" onclick="showPage('page4')">Medical</a>
+    <a href="#" onclick="showPage('page5')">Degree</a>
+    <a href="#" onclick="showPage('page6')">Law</a>
+    <a href="#" onclick="showPage('page7')">Others</a>
+  </nav>
+  <div class="faded-bg">TEAM SGMM</div>
+  <h3>Guiding Your Future After 12th</h3>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 3: Engineering -->
+<div id="page3" class="content" style="display:none;">
+  <h3>COURSES OFFERED IN BACHELOR OF TECHNOLOGY (B.TECH)</h3>
+  <p>CSE, Mechanical, Civil, Electrical, ECE, IT, Chemical, AI/ML, Data Science, Cyber Security, Robotics, Aerospace, BioTech, Auto, Mechatronics, Petroleum, Marine, Architecture</p>
+  <p class="blink">NOTE: Admission process through JEE Mains, JEE Advanced, EAMCET, EAPCET, NATA.</p>
+  <button class="btn" onclick="showPage('page2')">Go Back</button>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 4: Medical -->
+<div id="page4" class="content" style="display:none;">
+  <h3>COURSES OFFERED IN MEDICAL</h3>
+  <p>MBBS, BDS, BAMS, BHMS, BUMS, BSMS, BVSc & AH, BPT, B.Pharmacy</p>
+  <p class="blink">NOTE: Admission process through NEET, EAMCET.</p>
+  <button class="btn" onclick="showPage('page2')">Go Back</button>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 5: Degree -->
+<div id="page5" class="content" style="display:none;">
+  <h3>DEGREE COURSES</h3>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Bachelor of Arts</button>
+    <div class="dropdown-content">
+      <p>BA in Journalism, Political Science, English, History, Economics, Sociology, Psychology, Geography, Philosophy, Fine Arts, Social Work, Public Administration, Performing Arts, Foreign Languages, Education</p>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Bachelor of Science</button>
+    <div class="dropdown-content">
+      <p>MPC, MPCs, MSCs, MPE, BZC, BZM, BtBC, BtZC, MZC, CS, Data Science, IT, Agriculture, Horticulture, Food Science, Nursing, MLT, Nutrition, Anesthesia, Cardiac Care, Forensic, Biochemistry, Geology, Home Science</p>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Bachelor of Commerce</button>
+    <div class="dropdown-content">
+      <p>B.Com General, B.Com Honors, B.Com Computer Applications, B.Com Taxation, B.Com Business Analytics</p>
+    </div>
+  </div>
+  <p class="blink">NOTE: Admission process through CUET, DOST.</p>
+  <button class="btn" onclick="showPage('page2')">Go Back</button>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 6: Law -->
+<div id="page6" class="content" style="display:none;">
+  <h3>COURSES OFFERED IN LAW</h3>
+  <p>BA LLB, BBA LLB, B.Com LLB, B.Sc LLB, B.Tech LLB</p>
+  <p class="blink">NOTE: Admission process through CLAT.</p>
+  <button class="btn" onclick="showPage('page2')">Go Back</button>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<!-- PAGE 7: Others -->
+<div id="page7" class="content" style="display:none;">
+  <h3>OTHER OPTIONS</h3>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Government Jobs</button>
+    <div class="dropdown-content">
+      <p><b>SSC:</b> LDC, DEO, Postal Assistant</p>
+      <p><b>Railways:</b> Clerk, Ticket Clerk, Time Keeper</p>
+      <p><b>Defense:</b> Soldier, Agniveer, Sailor</p>
+      <p><b>Police/Paramilitary:</b> BSF, CRPF</p>
+      <p><b>Banking:</b> SBI, IBPS Clerk</p>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Private Jobs</button>
+    <div class="dropdown-content">
+      <p>BPO, Retail, Data Entry, Digital Marketing, Receptionist</p>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button onclick="toggleDropdown(this)">Short Term Courses</button>
+    <div class="dropdown-content">
+      <p>Paramedical, IT, Vocational</p>
+    </div>
+  </div>
+  <button class="btn" onclick="showPage('page2')">Go Back</button>
+  <footer><span>TEAM SGMM 2025</span></footer>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.content').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+  function toggleDropdown(btn) {
+    btn.parentElement.classList.toggle("show");
+  }
+</script>
+</body>
+</html>
